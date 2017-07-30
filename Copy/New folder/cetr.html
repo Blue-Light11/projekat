@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Seminarki</title>
+		
+		<link rel="stylesheet" type="text/css" href="css_za_prvu.css" />
+		<link rel="stylesheet" type="text/css" href="css_za_cetr.css" />
+		
+		<script>
+			function ini()
+			{	var broj_v2 = 0;
+				var interval;
+				var slajder = document.getElementById("slajd");
+				var div_3 = document.getElementById("div1");
+				slajder.addEventListener("mouseup", function(){funk(this.value)}, false);
+				function funk(broj)
+				{	broj_v3 = broj*1000;
+					var div = document.getElementById("div2");
+					div.style.animationDuration = "" + broj + "s";
+					clearInterval(interval);
+					interval = setInterval(tajmer, broj*1000);
+				}
+				
+				function tajmer()
+				{	div_3.style.backgroundImage = "url('..//Untitled " + broj_v2++%11 + ".jpg')";
+				}
+			}
+			window.addEventListener("load", ini);
+		</script>
+		
+		<style>
+		</style>
+		
+	</head>
+	
+	<body>
+		<div id = "naslov">Galerija slika</div>
+		<div id = "meni">
+			<div class="meni_stavke" id="index"><a href="Projekat.html">Glavna</a></div>
+			<div class="meni_stavke" id="gruga"><a href="druga.html">Plešuća</a></div>
+			<div class="meni_stavke" id="treca"><a href="treca.html">Sad me vidiš</a></div>
+			<div class="meni_stavke" id="cetvrta"><a href="cetr.html">Vreme je</a></div>
+		</div>
+		<br><br><br>
+		<div id="div1">
+			<div id="div2" >
+				<div id="div3" style="opacity: 1 !important">
+				</div>
+			</div>
+		</div>
+		<div>
+			<input id="slajd" type="range" min="1" max="60" step="1" />
+		</div>
+	</body>
+</html>

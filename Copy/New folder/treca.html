@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Seminarki</title>
+		
+		<link rel="stylesheet" type="text/css" href="css_za_prvu.css" />
+		
+		<script>
+			function ini()
+			{	var broj = -1;
+				window.addEventListener("blur", gubi, false);
+				window.addEventListener("focus", dodaj, false);
+				function gubi()
+				{	broj = broj + 1;
+					broj = broj%11;
+				}
+				
+				function dodaj()
+				{	var slika = document.createElement("img");
+					var adr = "..\\Untitled " + broj + ".jpg";
+					slika.src = adr;
+					slika.style.width = "100px";
+					slika.style.height = "100px";
+					slika.style.margin = "10px";
+					slika.style.float = "left";
+					document.getElementById("lepi").appendChild(slika);
+				}
+			}
+			window.addEventListener("load", ini);
+		</script>
+		
+		<style>
+		</style>
+	</head>
+	<body>
+			<div id = "naslov">Galerija slika</div>
+			<div id = "meni">
+				<div class="meni_stavke" id="index"><a href="Projekat.html">Glavna</a></div>
+				<div class="meni_stavke" id="druga"><a href="druga.html">Plešuća</a></div>
+				<div class="meni_stavke" id="treca"><a href="treca.html">Sad me vidiš</a></div>
+				<div class="meni_stavke" id="cetvrta"><a href="cetr.html">Vreme je</a></div>
+			</div>
+			<br><br><br>
+			<div id = "lepi">
+			</div>
+	</body>
+</html>
